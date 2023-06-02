@@ -1,0 +1,51 @@
+### R - Read
+GET http://localhost:4500/products
+
+### R - Read - Get a product detiails by ID
+GET http://localhost:4500/products/11
+
+
+### R - Read - Get the first product that has a keyword in its title
+GET http://localhost:4500/products/tv
+
+### C - Create
+POST http://localhost:4500/products
+Content-Type: application/json
+
+{
+  "productName": "75 Samsung TV",
+  "price": 4444
+}
+
+### U - Update
+PUT http://localhost:4500/products/11
+Content-Type: application/json
+
+{
+  "productName": "BRAVIA True color TV",
+  "price": 1699
+}
+
+### D - Delete
+DELETE http://localhost:4500/products/10
+
+
+###
+DELETE http://localhost:4500/products
+
+###
+POST http://localhost:4500/validateuser
+Content-Type: application/json
+
+{
+  "email": "j@j.com",
+  "password": "12345"
+}
+
+###
+PUT http://localhost:4500/setstatus/1
+Content-Type: application/json
+
+{
+  "status": false
+}

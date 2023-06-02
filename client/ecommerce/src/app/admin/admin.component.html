@@ -1,0 +1,42 @@
+<!-- String Interpolation Binding -->
+<h1>{{ title }}</h1>
+
+product Name<input type="text" [class]="productClass" (focus)="createCandyBorder()" (blur)="removeCandyBorder()">
+<!--                        Property binding        Attribute binding    -->
+price <input type="number" [placeholder]="pricePH" [attr.abc]="abcText" (click)="printHi()" [class]="priceClass" [attr.willsmith]="actor">
+
+<br><br><br>
+
+Age: <input type="number" [(ngModel)]="address">
+
+<br><br>
+{{ address }}
+<!-- [()]  Banana in a box -->
+
+<br><br><br>
+
+<button (click)="alertSubmit()">Submit</button>
+
+<br><br>
+
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Product Name</th>
+    <th>Image</th>
+    <th>Price</th>
+    <th>Live?</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.productName }}</td>
+    <td>{{ product.image }}</td>
+    <td>${{ product.price}}</td>
+    <td>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" [checked]="product.online" (click)="setLiveStatus(product.id, !product.online)">
+          <!-- <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label> -->
+        </div>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,16 @@
+<h1>My Products</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+        <!-- <a routerLink="/products/{{ product.id }}"> -->
+        <a [routerLink]="['/products', product.id, product.productName]">
+          <div class="productContainer">
+            <h3>{{ product.productName }}</h3>
+            <p>${{product.price}}</p>
+            <p class="id">Product ID: {{ product.id }}</p>
+          </div>
+        </a>
+    </div>
+  </div>
+</div>

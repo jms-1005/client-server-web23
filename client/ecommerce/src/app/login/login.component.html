@@ -1,0 +1,17 @@
+<label for="email"></label>
+<input type="email" [(ngModel)]="email" id="email"> <br>
+<label for="password"></label>
+<input type="password" [(ngModel)]="password" id="password">
+
+<br><br>
+
+<button (click)="login()">Log in</button>
+
+<br><br>
+<a href="forgotpassword">Forgot password?</a>
+
+<div [hidden]="hideLoginStatus">
+  <div class="message" *ngIf="loginSuccess">Great! You are an authenticated user</div>
+  <div class="message" *ngIf="!loginSuccess">Oops! Check you email and password.</div>
+</div>
+

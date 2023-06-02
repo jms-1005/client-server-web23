@@ -1,0 +1,18 @@
+.productContainer{
+  margin: 10px;
+  padding: 25px;
+  border: 1px solid rgb(206, 205, 205);
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.69);
+  box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.39);
+  h3{
+    color: darkgray;
+  }
+  p{
+    font-weight: bold;
+  }
+  p.id{
+    font-size: 10px;
+    color: gray;
+  }
+}
