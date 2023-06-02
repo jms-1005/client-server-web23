@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/evironments/environment';
 
 @Component({
   selector: 'app-admin',
@@ -51,13 +52,13 @@ export class AdminComponent implements OnInit{
 
   setLiveStatus(id:number, status:boolean){
     console.log(id, status);
-    this.http.put<boolean>('http://localhost:4500/setstatus/' + id, { status: status}).subscribe( res => {
+    this.http.put<boolean>(environment.server + '/setstatus/' + id, { status: status}).subscribe( res => {
       console.log(res);
     })
   }
 
   ngOnInit(): void {
-      this.http.get<any>('http://localhost:4500/products').subscribe( res => {
+      this.http.get<any>(environment.server + '/products').subscribe( res => {
         console.log(res);
         this.products = res.productData;
 

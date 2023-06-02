@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/evironments/environment';
 
 @Component({
   selector: 'app-product-details',
@@ -20,7 +21,7 @@ export class ProductDetailsComponent implements OnInit{
         let productID = this.route.snapshot.paramMap.get("id");
         console.log("Product ID is:", productID);
 
-        this.http.get("http://localhost:4500/products/" + productID).subscribe( productData => {
+        this.http.get(environment.server + "/products/" + productID).subscribe( productData => {
             console.log('Product data:', productData);
             this.product = productData;
         })

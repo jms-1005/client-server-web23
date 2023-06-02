@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/evironments/environment';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit{
 
   login(){
     console.log(this.email, this.password);
-    this.http.post("http://localhost:4500/validateuser", { email: this.email, password: this.password} ).subscribe( res => {
+    this.http.post(environment.server + "/validateuser", { email: this.email, password: this.password} ).subscribe( res => {
 
     if(res){
       //redirect to admin page
