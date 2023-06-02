@@ -4,3 +4,6 @@
 # To run server
 - Set up a MySQL database named 'ecommerce' with a table named 'products'
 - Go to server home folder and run `npm run start`
+
+### Quick Tip
+The ecommerce.sql file can be imported to your MySQL database
